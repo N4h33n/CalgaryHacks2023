@@ -1,0 +1,39 @@
+<!-- add_kid.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a Kid</title>
+  </head>
+  <body>
+    <h1>Add a Kid</h1>
+    <form method="post" action="/add-kid">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age"><br>
+      <label for="gender">Gender:</label>
+      <select id="sex" name="gender">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select><br>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country"><br>
+      <label for="about">About:</label>
+      <textarea id="about" name="about"></textarea><br>
+      <label for="tags">Tags:</label>
+      <input type="text" id="tags" name="tags"><br>
+      <label for="image">Image:</label>
+      <input type="text" id="image" name="image"><br>
+      <button type="submit">Submit</button>
+    </form>
+    {% for kid in kids %}
+  <h2>{{ kid.name }}</h2>
+  <p>{{ kid.about }}</p>
+  <p>Age: {{ kid.age }}</p>
+  <p>Gender: {{ kid.sex }}</p>
+  <p>Country: {{ kid.country }}</p>
+  <p>Tags: {{ kid.tags }}</p>
+  <img src="{{ kid.image }}" alt="{{ kid.name }}">
+{% endfor %}
+  </body>
+</html>

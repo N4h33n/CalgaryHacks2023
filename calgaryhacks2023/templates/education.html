@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Median</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/1838053033.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+    </style>
+</head>
+
+<body class="bg-black position-relative m-0">
+
+    <style>
+        #myVideo {
+            position: fixed;
+            top:20px;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .button-29 {
+        align-items: center;
+        appearance: none;
+        background-image: radial-gradient(100% 100% at 100% 0, #d6e8ed 0, #de8dee 100%);
+        border: 0;
+        border-radius: 6px;
+        box-shadow: rgba(40, 35, 66, .4) 0 2px 4px,rgba(40, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono",monospace;
+        height: 48px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s,transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow,transform;
+        font-size: 18px;
+        }
+
+        .button-29:focus {
+        box-shadow: #de8dee 0 0 0 1.5px inset, rgba(40, 35, 66, .4) 0 2px 4px, rgba(40, 35, 66, .3) 0 7px 13px -3px, #de8dee 0 -3px 0 inset;
+        }
+
+        .button-29:hover {
+        box-shadow: rgba(40, 35, 66, .4) 0 4px 8px, rgba(40, 35, 66, .3) 0 7px 13px -3px, #de8dee 0 -3px 0 inset;
+        transform: translateY(-2px);
+        }
+
+        .button-29:active {
+        box-shadow: #de8dee 0 3px 7px inset;
+        transform: translateY(2px);
+        }
+
+        .selectb{
+          background-color: transparent;
+        }
+
+        #division{
+            overflow: auto;
+        }
+
+        .region{
+            margin-top: 90px;
+            margin-left: 400px;
+            text-decoration: none;
+            text-transform: none;
+            color:#bdadbe
+        }
+
+        .region{
+            margin-top: 90px;
+            margin-left: 400px;
+            text-decoration: none;
+            text-transform: none;
+            color:#bdadbe
+        }
+
+        .prompt{
+           margin-left: 60px;
+           margin: 50px;
+           text-align: center;
+           padding-right: 10px;
+            color: #cd9ccdbd;
+            font-family: 'Source Serif Pro', serif;
+            font-weight: bolder;
+            text-shadow: 1px 4px 20px #ffffff73;
+        }
+
+        a{
+            text-decoration:none;
+            text-transform: none;
+            color: rgb(84, 62, 116);
+          }
+          
+    </style>
+
+    <video class="z-1" autoplay muted loop id="myVideo">
+        <source id="Vidd" src="Montage.mp4" type="video/mp4"></video>
+    <div id="division" class="z-2 bg-dark bg-opacity-75 m-0 position-relative start-0" style="top:-5px; height: 1100px;">
+        <div class="rounded-pill mb-3 mx-5 mh-25 p-2" style="height:50px; margin-top: 5px; background-color: rgb(250, 216, 244, 0.7);">
+            <div style="display: inline-block;">
+                <img src="logo.png" style="width: 60px;" alt="">
+            </div>
+            <div style="margin-left:350px; display: inline-block;">
+                <button id="shortcut1" class="selectb rounded-pill text-body-secondary align-self-center border border-0"><a href="Form.html">Are you an Ambassador? Click here to add a recipient</a></button>
+            </div>
+        </div>
+        <div id = "temp" class="mx-3" style="text-align: center; text-shadow: 1px 1px 2px #b69696; ; color: azure; font-family: 'Rowdies', cursive; font-size: xx-large;">
+            Pick a category and help someone today!
+        </div>
+        <div id="buttons" style="text-align: center; margin-top: 50px;">
+            <button class="literacyrate button-29" style="display: block; margin: 20px; margin-left: 40%; margin-top:50px">
+                Literacy Rate
+            </button>
+            <button class="completionrate button-29" style="display: block; margin: 20px; margin-left: 40%; margin-top:50px">
+                Completion Rate
+            </button>
+            <button class="govtfunding button-29" style="display: block; margin: 20px; margin-left: 40%; margin-top:50px">
+                Government Education Funding
+            </button>
+        </div>
+    </div>  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(document).on("click", ".literacyrate", function(e){
+          fetcher("Literacy Rate","https://api.worldbank.org/v2/countries/all/indicators/SE.ADT.1524.LT.ZS?format=json&per_page=1650")
+        })
+        $(document).on("click", ".completionrate", function(e){
+          fetcher("Completion Rate","https://api.worldbank.org/v2/countries/all/indicators/SE.PRM.CMPT.ZS?format=json&per_page=1650")
+        })
+        $(document).on("click", ".govtfunding", function(e){
+          fetcher("Government Education Funding", "https://api.worldbank.org/v2/countries/all/indicators/SE.XPD.TOTL.GD.ZS?format=json&per_page=1650")
+        })
+        function fetcher(category, url) {
+              $("#temp").hide()
+              $("#buttons").hide()
+              $.get(url, function(data){
+                var dict = {};
+                for (let i = 0; i < 1650; i++) {
+                    if (data[1][i].value!=null){
+                        const keyy = data[1][i].country.value;
+                        const valuee = data[1][i].value;
+                        dict[keyy] = valuee;
+                    }
+                }
+                console.log(dict)
+                var items = Object.keys(dict).map(
+                (key) => { return [key, dict[key]] });
+                items.sort(
+                (first, second) => { return first[1] - second[1] }
+                );
+                var keys = items.map(
+                (e) => { return e[0] });
+                console.log(keys);
+                var sett = new Set(keys);
+                var list = Array.from(sett)
+                console.log(list)
+                $('#division').append(`<h2 class= "prompt"> These regions are arranged in order of ${category}, please pick one to get started... </h2>`);
+                $.each(list, function(index, item) {
+                    $('#division').append('<p>' + `<a class="region" href="http://127.0.0.1:5000"> ${item}</a>` + '</p>');
+                    });
+                // $(".region").on("mouseenter", function(e){
+                //             var word = $(this).val()
+                //             var nvalue = dict[word]
+                //             console.log(nvalue)
+                //             $(this).after($(`<span id="here">${nvalue}</span>`));
+                //             })
+                //             .on("mouseleave", function(e){
+                //             $("#here").hide()
+                //     })
+
+              });
+        }
+      })
+    </script>
+</body>
+</html>
